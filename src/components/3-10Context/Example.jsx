@@ -18,23 +18,23 @@ export default class Example extends Component {
     }
     render() {
         return (
-            <>
+            <div>
                 {/* provider에는 값을 주어야 한다. */}
                 <ThemeContext.Provider value = {this.state.theme} >
                 <ThemedButton changeTheme = {this.toggleTheme}/>
                 <ThemeContext.Consumer>
-                        {theme =>{
+                        {(theme) =>(
                         <div 
                         style={{
                             width: 500, 
                             height: 500, 
                             backgroundColor: theme.background}}>
                         </div>
-                    }}
+                        )}
                     </ThemeContext.Consumer>
                 </ThemeContext.Provider>
                     <ThemedButton />
-            </>
+            </div>
         )
     }
 }
